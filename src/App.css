@@ -1,38 +1,88 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.App{
+  height: 100vh;
+  width:  100vw;
+}
+
+.wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.imgcontain > img{
+  height: 235px;
+  position: relative;
+  animation-name: slideInLeft;
+  animation-duration: 2s;
+  transition: 1s ease all;
+}
+
+@keyframes slideInLeft {
+  from {
+    left: 300px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.title{
+  height: 100%;
+  line-height: 235px;
+  animation-name: slideInRight;
+  animation-duration: 2s;
+  transition: 1s ease all;
+  position: relative;
+  font-weight: 900;
+}
+
+@keyframes slideInRight {
+  from {
+    right: 300px;
+
+  }
+  to {
+    right: 0px;
+
+  }
+}
+
+.textcontain{
+  overflow: hidden;
+  position: relative;
+  height: 235px;
+  width: 350px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.imgcontain{
+  overflow: hidden;
+  width: 350px;
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.textcontain::after{
+  content: '';
+  position: absolute;
+  height: 235px;
+  width: 2.5px;
+  background: #231F20;
+  display: block;
+  top: 0;
+  left: 0;
+  line-height: 100%;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
